@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cara ou Coroa</title>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<script src="https://unpkg.com/vue"></script> <!-- importa a biblioteca -->
+</head>
+
+<style>
+
+@font-face {
+	font-family: 'RobotoMono';
+}
+
+*{
+	font-family: 'RobotoMono', monospace;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: #FFF;
+	background: #808080;
+	background: linear-gradient(to right, rgb(19, 106, 138), rgb(38, 120, 113));
+}
+
+input {
+	font-size: 2em;
+	margin-bottom: 30px;
+}
+
+div {
+	border: 1px solid #222;
+	padding: 30px 15px;
+	background-color: #0006
+}
+
+.btn {
+	border: 1px solid #222;
+	padding: 10px 15px;
+	background-color: #FFF
+}
+</style>
+
+<body>
+	<div id="app">
+		<h1>Cara ou Coroa!</h1>
+		<input value="moeda" v-model="message" ><br />
+		<button @click="cara"class="btn">Cara</button>
+		<button @click="coroa"class="btn">Coroa</button>
+		<button @click="jogar"class="btn">Jogar</button>
+		<p>Moeda: {{resultado}} </p>
+		<p>Jogador: {{vitoria}} </p>
+		<p>Computador: {{derrota}} </p>
+		<p>Coeficiente: {{coef}} por cento </p>
+	</div>
+<script>
+var myObject = new Vue({
+	el: '#app', //app id 
+	data: {
+	message: 'Bem vindo ao Jogo!',
+	escolha: 0,
+	resultado: 0,
+	vitoria: 0,
+	derrota: 0,
+	coef: 0,
+	},
+	methods: {
+    jogar: function () {
+		this.moeda()
+		this.coeficiente()
+		if(this.escolha == this.resultado){
+			this.message = "Você ganhou!";
+			this.vitoria += 1;
+		} else if (this.escolha != this.resultado & this.escolha != 0) {
+			this.message = "Você Perdeu!"
+			this.derrota += 1;
+		} else {
+			//this.message = "Você não escolheu uma opção!";	//somente para testes
+			window.alert("Você não escolheu uma opção!");
+		}
+    },
+	cara: function () {
+		this.message = "Você escolheu, cara!";
+		this.escolha = 1;
+	},
+	coroa: function () {
+		this.message = "Você escolheu, coroa!"
+		this.escolha = 2;
+	},
+	moeda: function () {
+		if (this.escolha == 0 ){
+			window.alert("Escolha um lado da moeda primeiro!");
+		}
+		this.resultado = Math.floor(Math.random() * 2) + 1;	// 1 cara - 2 coroa 
+	},
+	coeficiente: function () {
+			this.coef = ((this.vitoria * 100) / (this.vitoria + this.derrota)).toPrecision(3);		
+	},
+  }
+})
+
+</script>
+</body>
+</html>
