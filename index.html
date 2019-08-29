@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!--
+Site responsivo com menu lateral e barra de navegação com botão de busca.
+Feito usando apenas HTML/CSS, seguindo os exemplos na pagina https://www.w3schools.com/
+Trabalho para o curso de ADS ead.
+Aluno: João Paulo Cruz Rosa. 
+//-->
+
+<html>
+<head>
+<!--importando os estilos CSS externos-->
+<link rel="stylesheet" type="text/css" href="meuestilo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!--Cria a barra de navegação-->
+<ul>
+
+<!--Cria o menu drop down-->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn"><b>&#9776 </b></a>
+    <div class="dropdown-content">
+      <a href="noticias.html" target="iframe_a">&#9735 Notícias principais</a>
+      <a href="paravoce.html" target="iframe_a">&#9825 Para você</a>
+      <a href="favoritos.html" target="iframe_a">&#9734 Favoritos</a>
+	  <a href="#">&#9737 Pesquisas salvas</a>
+	  <p>——————————</p>
+      <a href="#">&#9872 Brasil</a>
+      <a href="#">&#9898 Mundo</a>
+	  <a href="#">&#9992 Local</a>
+      <a href="#">&#9997 Negócios</a>
+      <a href="#">&#9762 Ciência e tecnologia</a>
+	  <a href="#">&#9861 Entretenimento</a>
+      <a href="#">&#9903 Esportes</a>
+      <a href="#">&#9877 Saúde</a>
+    </div>
+  </li>
+    <li><a href="favoritos.html" target="iframe_a">Home</a></li>
+	<li><a href="noticias.html" target="iframe_a">News</a></li>
+  
+  <!--Cria o botão de pesquisa-->
+  <form class="example" action="/action_page.php" style="float: right;"> <!--Coloca o botão do lado direito-->
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+  
+</form>
+  
+</ul>
+
+<!--Cria coluna com o conteudo do site-->
+<div class="row">
+  <div class="column">
+    
+  </div>
+  <!--Conteudo textual do site-->
+  <div class="column">
+  
+    <iframe height="820px" width="100%" src="noticias.html" name="iframe_a"  style="border:none;"></iframe>
+  <!--"-->
+  </div>
+  
+  
+  <div class="column">
+    
+  </div>
+</div>
+
+<footer>
+<address>&copy; João Paulo 2019 - Contact <a href="mailto:joao.rosa1@alunos.unis.edu.br">me</a></address>
+</footer>
+
+</body>
+</html>
