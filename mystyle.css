@@ -1,0 +1,33 @@
+div{
+	background-color: gray;
+	padding-left: 10px;
+	height:380px;
+	width: 420px;
+	}
+	div input{
+	width: 96%;
+	padding: 12px 20px;
+	font-size: 16px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	}
+	div button{
+	background-color: #e7e7e7; /* grey */
+	width: 23.5%;
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	margin: 1px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	}
+	.btnC{
+	background-color: #f44336; /* Red */
+	color: white;
+	}
+	.btnOp{
+	background-color: #4CAF50; /* green */
+	color: white;
+	}
